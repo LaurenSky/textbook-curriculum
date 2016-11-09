@@ -41,7 +41,7 @@ JavaScript doesn't have an inheritance operator or keyword like Ruby's `<`. Inst
 
 So where's `FuzzyPets` in that setup? How would we create `MyPets` such that it inherits from `FuzzyPets` in JavaScript?
 
-## Ineritance Using Object Prototypes
+## Inheritance Using Object Prototypes
 Let's copypasta this code block into our Node REPL:
 
 ```javascript

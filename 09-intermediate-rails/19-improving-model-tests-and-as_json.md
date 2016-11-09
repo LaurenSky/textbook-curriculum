@@ -67,7 +67,13 @@ end
 
 So we end up with a lot of tests for validations, lots and lots of copy and paste.  There must be a better way!  Life is too short.
 
-There is.  The basic validations we're using all have a few things in common:  
+We need to look for a few things:
+1.  What are we repeating
+1.  What is different in each case
+
+We can then make the repeated sections of code into a helper method and use variables/parameters in places where the code varies.  We'll look at it further below.  
+
+The basic validations we're using all have a few things in common:  
 *  The list of validation errors are stored in model.errors.messages
 *  They all cause `.valid?` and `.save` to fail.  
 
@@ -122,6 +128,7 @@ First we can generalize this test to handle all kinds of validations as a helper
 
 This does a pretty good job, we've managed to reduce our validation testing code with our handy `assert_validations` helper method, and the assert's error message will indicate which field failed the validations test.  
 
+We can look for similar areas in our code where we are repeating ourselves to abstract out into helper methods in order to DRY out our code.
 
 ## Overriding as_json
 
